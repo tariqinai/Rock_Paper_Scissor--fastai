@@ -1,16 +1,16 @@
 # --- Core app deps ---
 streamlit>=1.32
-pillow>=10.2
-pandas>=2.2
-numpy>=1.26
+pillow>=10.2,<12
+pandas>=2.2,<2.4
+numpy==1.26.4
 
-# --- Fastai stack (2.7.x branch, compatible with your pickle) ---
+# --- Fastai stack that matches older pickles ---
 fastai==2.7.15
 fastcore>=1.5
 fastdownload>=0.0.7
 fastprogress>=1.0.3
 
-# --- PyTorch CPU builds ---
+# --- PyTorch CPU builds (matching fastai 2.7.x) ---
 torch==2.1.2+cpu
 torchvision==0.16.2+cpu
 --extra-index-url https://download.pytorch.org/whl/cpu
