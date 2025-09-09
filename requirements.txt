@@ -1,0 +1,14 @@
+# App
+streamlit>=1.32
+pillow>=10.2
+pandas>=2.2
+
+# fastai + deps
+fastai==2.8.1
+fastcore>=1.5
+fastdownload>=0.0.7
+
+# PyTorch CPU (works with fastai 2.8.1)
+torch==2.6.0+cpu
+torchvision==0.21.0+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
