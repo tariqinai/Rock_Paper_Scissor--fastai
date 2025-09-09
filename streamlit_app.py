@@ -9,6 +9,13 @@ import pandas as pd
 # fastai imports
 from fastai.vision.all import load_learner, PILImage
 import torch
+# --- WindowsPath -> PosixPath patch for loading Windows-exported models on Linux ---
+import pathlib, os
+if os.name != "nt":  # running on Linux/Mac
+    pathlib.WindowsPath = pathlib.PosixPath
+# -----------------------------------------------------------------------------------
+learn = load_learner("rps.pkl")  # or your path
+
 
 # ---------- App Config ----------
 st.set_page_config(page_title="Rock • Paper • Scissors - fastai",
@@ -111,3 +118,4 @@ else:
 
 st.markdown("---")
 st.caption("Built with fastai + Streamlit. Drop your `rps.pkl` next to `app.py`.")
+
